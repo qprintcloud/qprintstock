@@ -8,18 +8,16 @@ import (
 func SetupAuthenAPI(router *gin.Engine) {
 	authenAPI := router.Group("/api/v2")
 	{
-		authenAPI.POST("/login", Login)
-		authenAPI.POST("/register", Register)
+		authenAPI.POST("/login", login)
+		authenAPI.POST("/register", register)
 	}
 
 }
 
-//Login route for login
-func Login(c *gin.Context) {
+func login(c *gin.Context) {
 	c.JSON(200, gin.H{"result": "Login !!"})
 }
 
-//Register route for register
-func Register(c *gin.Context) {
+func register(c *gin.Context) {
 	c.JSON(200, gin.H{"result": "Register !!"})
 }
